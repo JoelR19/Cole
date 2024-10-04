@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Círculo que huye del mouse</title>
+    <style>
+      body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Círculo */
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Cuadrado */
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Triángulo */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid green;
+    position: absolute;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efecto al pasar el mouse */
+.container:hover .circle {
+    transform: translate(200px, 200px); /* Mover círculo */
+}
+
+.container:hover .square {
+    transform: translate(-200px, -200px); /* Mover cuadrado */
+}
+
+.container:hover .triangle {
+    transform: translate(150px, -150px); /* Mover triángulo */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle"></div>
+        <div class="square"></div>
+        <div class="triangle"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
